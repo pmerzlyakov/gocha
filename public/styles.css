@@ -1,0 +1,131 @@
+:root {
+    font-size: 1.4em;
+}
+
+body {
+    margin: 0;
+    background: #edeef0;
+}
+
+input {
+    font-size: 1rem;
+    padding: 0 5px;
+}
+
+#login {
+    height: 100vh;
+}
+
+#login input {
+    width: 35%;
+}
+
+#chat {
+    display: grid;
+    grid-template-areas:
+            "rooms history users"
+            "rooms message users";
+    grid-template-rows: 90% auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 10px;
+    height: 100vh;
+}
+
+#rooms {
+    grid-area: rooms;
+}
+
+#history {
+    grid-area: history;
+    overflow-y: auto;
+}
+
+#history:empty::after {
+    content: 'Message history is empty';
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: gainsboro;
+}
+
+#message {
+    grid-area: message;
+}
+
+#message input {
+    width: 95%;
+}
+
+#users {
+    grid-area: users;
+}
+
+.input-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.panel {
+    background: white;
+    border-radius: 5px;
+}
+
+.room {
+    cursor: pointer;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.room.notify:after {
+    position: absolute;
+    right: 10px;
+    content: '*';
+}
+
+.room:hover {
+    background: aliceblue;
+}
+
+.room.is-active {
+    background: lightskyblue;
+}
+
+.user {
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.user:hover {
+    background: aliceblue;
+}
+
+.message {
+    padding: 5px 10px;
+}
+
+.notification {
+    position: fixed;
+    right: 1em;
+    bottom: 1em;
+    padding: 15px;
+    border-radius: 5px;
+    background: antiquewhite;
+}
+
+.notification-message {
+    padding-right: 10px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    max-width: 25vw;
+}
+
+.notification-close {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    z-index: 999;
+}

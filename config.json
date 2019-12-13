@@ -1,0 +1,7 @@
+{
+  "address": ":8080",
+  "webRoot": "./public",
+  "endpoint": "/chat",
+  "historySize": 10,
+  "redis": "redis:6379"
+}

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  chat:
+    build: .
+    ports:
+      - 8080:8080
+    depends_on:
+      - redis
+  redis:
+    image: redis
+    command: ["redis-server", "--appendonly", "yes"]
+    expose:
+      - 6379
+    volumes:
+      - ./data:/data

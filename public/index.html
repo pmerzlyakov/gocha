@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <title>Chat</title>
+</head>
+<body>
+<section id="login">
+    <form class="input-form" name="login">
+        <input type="text" placeholder="Your name..." name="username" required autofocus>
+    </form>
+</section>
+<section id="chat" style="display: none">
+    <template id="room-template">
+        <div class="room" data-content></div>
+    </template>
+    <template id="message-template">
+        <div class="message" data-content></div>
+    </template>
+    <template id="user-template">
+        <div class="user" data-content></div>
+    </template>
+
+    <aside id="rooms" class="panel"></aside>
+    <section id="history" class="panel"></section>
+    <section id="message" class="panel">
+        <form class="input-form" name="send">
+            <input type="text" placeholder="Type a message..." name="message" required autofocus>
+        </form>
+    </section>
+    <aside id="users" class="panel"></aside>
+</section>
+<div id="notification" class="notification" style="display: none">
+    <div class="notification-message"></div>
+    <div class="notification-close">×</div>
+</div>
+</body>
+</html>
